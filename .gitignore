@@ -1,0 +1,24 @@
+# Node modules
+node_modules/
+
+# Environment variables
+.env
+
+# Vercel build output
+.vercel/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Local IDE settings
+.vscode/
+.idea/
+.DS_Store
+
+# Dependencies & cache
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
