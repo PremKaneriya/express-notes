@@ -22,4 +22,10 @@ app.use("/notes", noteRoutes);
 // Start server
 connectDB();
 const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+connectDB().then(() => {
+    app.listen(PORT, () => {
+      console.log(`Server running on port ${PORT}`);
+    });
+  }).catch(err => {
+    console.error("Failed to connect to DB", err);
+  });
