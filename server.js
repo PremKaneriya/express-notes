@@ -13,12 +13,7 @@ const app = express();
 app.use(express.json());
 app.use(cookieParser());
 
-app.use(
-    cors({
-      origin: "https://express-notes-3eyad5fve-premkaneriyas-projects.vercel.app", // Replace with your frontend URL
-      credentials: true, // Allow cookies and other credentials
-    })
-);
+app.use(cors());
 
 // Set EJS as view engine
 app.set("view engine", "ejs");
@@ -28,11 +23,10 @@ app.use("/auth", authRoutes);
 app.use("/notes", noteRoutes);
 
 // Start server
-connectDB();
 const PORT = process.env.PORT || 5000;
 connectDB().then(() => {
     app.listen(PORT, () => {
-      console.log(`Server running on port ${PORT}`);
+      console.log(`Server running on port http://localhost:${PORT}`);
     });
   }).catch(err => {
     console.error("Failed to connect to DB", err);
